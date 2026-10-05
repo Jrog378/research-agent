@@ -1,14 +1,22 @@
-# Single-agent investigation prompt
+Read AGENTS.md and research_brief.md. Conduct the bounded investigation using
+available search, source-reading, and filesystem tools. Do not use subagents.
+Inspect existing reports and decisions first if any exist.
 
-Read AGENTS.md and research_brief.md. Conduct one bounded literature investigation using available web search, source-reading, and local file tools.
+Choose searches based on unresolved questions. Read sources, record evidence,
+and change direction when findings challenge the initial idea. Keep within the
+search/retrieval budget. If tools are unavailable, report that and stop rather
+than inventing actions. Preserve a unique run directory under runs/.
 
-Start by inspecting reports/latest.md and previous runs. Choose searches based on unresolved questions and the evidence encountered. Inspect original papers and official dataset documentation. Revise searches when findings challenge the initial framing. Do not simply generate a plausible literature review from memory.
+Write these Markdown artifacts:
+activity_log.md: actual queries/URLs, actions, access failures, short reasons for
+search changes, budget counts, and stopping reason.
+literature_evidence.md: paper IDs, verified metadata, access level, question,
+geography, data, methods, findings, validation, and supporting section/page.
+Mark unknown information rather than guessing.
+gap_assessment.md: candidate studies, supporting AND competing prior work,
+feasible data, unresolved assumptions, and what could invalidate the contribution.
+briefing.md: a 500-650 word spoken overview, references and human decision questions.
 
-Create a unique run directory under runs/ and write:
-
-1. activity_log.md: actual queries, inspected URLs, access outcomes, concise explanations of search changes, and stopping reason.
-2. literature_evidence.md: paper IDs and verified metadata; geography, question, data, methods, findings, validation, limitations, and supporting source locations. Mark unknown fields explicitly.
-3. gap_assessment.md: candidate gaps, supporting and competing evidence, search limitations, feasible datasets, and what would invalidate each proposed contribution.
-4. briefing.md: an approximately five-minute spoken briefing, followed by detailed evidence and questions requiring human judgment. Use paper IDs and avoid reading long URLs in the spoken portion.
-
-Copy the self-contained briefing to reports/latest.md. Include run ID, date, references, and links to the preserved artifacts. State what was verified and what remains proposed. Do not assert scientific novelty without human review. Report the actions performed and stop within the brief's limits.
+Publish a self-contained copy of briefing.md at reports/latest.md. Include run ID,
+date, a unique verification phrase, and paths to the preserved artifacts.
+Do not claim verified novelty or completed experiments. Do not push yet.

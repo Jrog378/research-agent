@@ -1,24 +1,35 @@
 # Research brief
 
-## Objective
+> TEMPLATE: replace every `[[...]]` field before running an investigation.
+> Keep the budget, evidence requirements, and stopping rules unchanged.
 
-Determine what research and operational work already exists on monitoring U.S. inland-waterway freight activity and disruption. Identify candidate research opportunities feasible for a small reproducible monitoring experiment.
+## Objective
+[[One or two sentences: what existing research and operational products should
+the agent investigate, and what kind of small, feasible study should it propose?]]
 
 ## Questions
-
-1. What has been measured using AIS, lock records, freight statistics, and environmental observations?
-2. How have studies detected disruption, evaluated indicators, or estimated freight activity?
-3. What do existing USACE and USDA products already provide?
-4. Which unresolved questions could a small inland-waterway monitoring prototype test?
+What has been measured, using which observations and validation?
+What do existing official products already provide?
+Which candidate contribution survives competing prior work?
+What evidence would weaken our preferred proposal?
+[[Optional: up to two topic-specific questions.]]
 
 ## Scope
+[[Geography, time period, and domain to prioritize.]]
+[[Which comparators are allowed (e.g., other regions or domains), and how they must be labeled.]]
+[[Any prototype idea to assess. State it as an option, not a required conclusion.]]
+[[Existing official products or datasets the agent must inspect before proposing novelty.]]
 
-Prioritize U.S. inland waterways. Include maritime and international inland-waterway studies as explicitly marked methodological comparators. Cover foundational work as needed, with emphasis on recent research. A PortWatch-inspired prototype is an option to assess, not a predetermined novelty claim.
+## My prior position (written before consulting the agent)
+Candidate contribution: [[your own idea]]
+Evidence that would undermine it: [[one specific finding that would weaken it]]
 
-## Pilot limits
+## Budget and stop
+At most 6 search queries, 8 source retrieval attempts, and 4 retained papers.
+Record failed retrievals and stop when the budget is exhausted or evidence is
+sufficient for a bounded next step. Ask for help if essential tools are unavailable.
+Do not contact people, purchase data, or expand the scope without discussion.
 
-At most 12 search queries, 15 substantive source inspections, and 8 retained research papers. Stop earlier if access prevents reliable assessment or the evidence is sufficient to propose a bounded next investigation. Record omissions and unresolved questions. Do not contact potential collaborators or acquire paid data.
-
-## Expected next experiment
-
-One corridor, one defined activity measure, a seasonal baseline, and historical anomaly checks against independent evidence. Verify data access, units, coverage, and sampling before promising implementation. Grain movements and lock passages are not comprehensive measures of all freight.
+## Outputs
+Preserved evidence and activity log, candidate-gap assessment, and a spoken briefing.
+No completed empirical results are required in this literature exercise.

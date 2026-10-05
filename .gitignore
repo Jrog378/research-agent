@@ -1,6 +1,23 @@
+# Credentials
 .env
 .env.*
 !.env.example
-__pycache__/
+*.pem
+*.key
+credentials*.json
+secrets*
+
+# Local environments
 .venv/
+.venv-*/
+venv/
+
+# Editor settings (machine-specific interpreter path)
+.vscode/
+
+# Caches
+__pycache__/
 *.pyc
+.ipynb_checkpoints/
+.cache/
+cache/

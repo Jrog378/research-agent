@@ -1,28 +1,32 @@
-# Inland-waterway research agent
+# Research agent
 
-A pilot for evidence-based literature investigation and mobile voice review.
+A single-agent literature investigation pilot with a mobile voice review handoff
+(GGS 662, Week 6). Research topic: **[[set in research_brief.md]]**.
 
-## First: test the handoff
+## How the handoff works
 
-Connect this repository to ChatGPT through its GitHub connection. Ask:
+1. **Local agent:** a coding agent (Claude Code, Codex, etc.) opened in this
+   repository reads `AGENTS.md` and `research_brief.md`, then runs
+   `prompts/investigate.md`. One agent does the searching, source inspection,
+   synthesis, and reporting. It runs interactively, with no unattended API runner.
+2. **GitHub:** you review the outputs, then commit and push. Phone assistants read
+   the pushed version, not your local folder.
+3. **Phone voice review:** connect this repository to ChatGPT (or Claude) and ask:
 
-> Read reports/latest.md in edwardoughton/research_agent using GitHub. State the run identifier and verification phrase, then summarize the report.
+   > Use the GitHub connection to read reports/latest.md in Jrog378/research-agent.
+   > State its run ID, date, and verification phrase, then brief me on it.
 
-Continue that conversation in Voice on your phone. Ask what has actually been verified and what is only proposed. Direct GitHub retrieval in Voice depends on your account; retrieve in text first if necessary. No file uploads are required for this route.
-
-## Run the research agent locally
-
-Open this repository in your coding agent. Use the prompt in `prompts/investigate.md`. The current pilot uses the agent's existing browsing and file tools; it does not call a model API or run unattended. One agent performs searches, source inspection, synthesis, and reporting.
-
-Read `research_brief.md` and `AGENTS.md` first. Preserve each run under `runs/<unique-run-id>/`. Publish a self-contained briefing at `reports/latest.md`. Commit and push reports when the investigation is complete. ChatGPT reads the pushed version, not local changes.
-
-The GitHub connection is a reading handoff. Spoken decisions do not automatically update this repository. Review a decision summary from the phone conversation and supply it to the local agent for the next run.
+   Then question the evidence by voice.
+4. **Back to the agent:** summarize the decisions from the voice discussion, correct
+   the summary, and save it as `decisions/<run-id>-human-review.md`. The next local
+   run reads it. Voice conversations never update this repository automatically.
 
 ## Structure
 
-- `research_brief.md`: objective, scope, and constraints.
-- `prompts/investigate.md`: reusable single-agent instruction.
-- `runs/`: preserved activity logs, literature evidence, and briefings.
-- `reports/latest.md`: latest report for mobile discussion.
-
-Scheduled/API-backed execution and a teaching notebook can follow after the phone test succeeds.
+- `AGENTS.md`: scientific research rules for the agent.
+- `CLAUDE.md`: tells Claude Code to follow `AGENTS.md`.
+- `research_brief.md`: objective, questions, scope, budget, and stopping rules.
+- `prompts/investigate.md`: the reusable investigation prompt.
+- `runs/<run-id>/`: preserved activity log, evidence register, gap assessment, and briefing.
+- `reports/latest.md`: self-contained copy of the latest briefing for phone review.
+- `decisions/`: human-reviewed decision summaries between runs.
